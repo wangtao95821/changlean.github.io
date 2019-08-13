@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="Destiny&#39;s Child">
 <meta property="og:description" content="iOS集成OpenCV.framework (c++) target - buildSettings - Compile Sources As 设置为默认的（According toFile Type）  原因：不要设置为 object C++ ，设置c++ 后，会对你的原有oc代码有冲突，很烦！   将文件中的 .cpp 文件改为 .mm  将使用到c++ 文件 的原有文件 .m 改为 .mm">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-23T03:24:40.000Z">
+<meta property="og:updated_time" content="2019-08-13T02:07:28.073Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS集成OpenCV.framework (c++) 注意事项">
 <meta name="twitter:description" content="iOS集成OpenCV.framework (c++) target - buildSettings - Compile Sources As 设置为默认的（According toFile Type）  原因：不要设置为 object C++ ，设置c++ 后，会对你的原有oc代码有冲突，很烦！   将文件中的 .cpp 文件改为 .mm  将使用到c++ 文件 的原有文件 .m 改为 .mm">
@@ -333,10 +333,23 @@
 </li>
 <li><p>配合pch文件</p>
 <ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#ifdef __cplusplus</span><br><span class="line">#import &lt;opencv2/opencv.hpp&gt;</span><br><span class="line">#import &lt;opencv2/highgui/cap_ios.h&gt;</span><br><span class="line"></span><br><span class="line">#endif</span><br><span class="line">// 上面 c++ 文件的导入</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#import &lt;Availability.h&gt;</span><br><span class="line">#import &quot;APPUtils.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#ifndef __IPHONE_5_0</span><br><span class="line">#warning &quot;This project uses features only available in iOS SDK 5.0 and later.&quot;</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">// 下面oc的</span><br><span class="line">#ifdef __OBJC__</span><br><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br></pre></td></tr></table></figure>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#ifdef __cplusplus</span><br><span class="line">#import &lt;opencv2/opencv.hpp&gt;</span><br><span class="line">#import &lt;opencv2/highgui/cap_ios.h&gt;</span><br><span class="line"></span><br><span class="line">#endif</span><br><span class="line">// 上面 c++ 文件的导入</span><br></pre></td></tr></table></figure>
+<p>#import &lt;Availability.h&gt;<br>#import “APPUtils.h”</p>
 </li>
 </ul>
 </li>
+</ul>
+<pre><code>#ifndef __IPHONE_5_0
+#warning &quot;This project uses features only available in iOS SDK 5.0 and later.&quot;
+#endif
+
+// 下面oc的
+#ifdef __OBJC__
+#import &lt;UIKit/UIKit.h&gt;
+#import &lt;Foundation/Foundation.h&gt;
+
+​```
+</code></pre><ul>
 <li><p>在.mm中导入c++ opencv 头文件时， 必须在最上面</p>
 </li>
 <li><p>使用到自己写的c++ .h文件， 引用它 在需要使用的.mm 文件中， 属性的定义也必须在.mm 中， 不可在.h 中使用</p>
