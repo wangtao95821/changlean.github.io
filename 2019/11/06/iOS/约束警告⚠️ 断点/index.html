@@ -101,17 +101,17 @@
 
 
 
-<meta name="description" content="NSObject 对象 占用内存 延伸 123456789NSObject *objc = [[NSObject alloc] init];    NSLog(@&quot;objc ---  %zd&quot;, malloc_size((__bridge const void *)objc));// 使用 malloc_size  来查看分配的内存， 准确的// (__bridge const void *) 转">
+<meta name="description" content="约束警告⚠️ 断点 1po [[UIWindow keyWindow] _autolayoutTrace]  自动布局给的警告">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NSObject 对象 占用内存 延伸">
-<meta property="og:url" content="https://github.com/wangtao95821/2019/08/12/iOS/NSObject 对象 占用内存 延伸/index.html">
+<meta property="og:title" content="Destiny&#39;s Child">
+<meta property="og:url" content="https://github.com/wangtao95821/2019/11/06/iOS/约束警告⚠️ 断点/index.html">
 <meta property="og:site_name" content="Destiny&#39;s Child">
-<meta property="og:description" content="NSObject 对象 占用内存 延伸 123456789NSObject *objc = [[NSObject alloc] init];    NSLog(@&quot;objc ---  %zd&quot;, malloc_size((__bridge const void *)objc));// 使用 malloc_size  来查看分配的内存， 准确的// (__bridge const void *) 转">
+<meta property="og:description" content="约束警告⚠️ 断点 1po [[UIWindow keyWindow] _autolayoutTrace]  自动布局给的警告">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-13T02:10:08.823Z">
+<meta property="og:updated_time" content="2019-11-06T07:32:46.028Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NSObject 对象 占用内存 延伸">
-<meta name="twitter:description" content="NSObject 对象 占用内存 延伸 123456789NSObject *objc = [[NSObject alloc] init];    NSLog(@&quot;objc ---  %zd&quot;, malloc_size((__bridge const void *)objc));// 使用 malloc_size  来查看分配的内存， 准确的// (__bridge const void *) 转">
+<meta name="twitter:title" content="Destiny&#39;s Child">
+<meta name="twitter:description" content="约束警告⚠️ 断点 1po [[UIWindow keyWindow] _autolayoutTrace]  自动布局给的警告">
 
 
 
@@ -141,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/wangtao95821/2019/08/12/iOS/NSObject 对象 占用内存 延伸/">
+  <link rel="canonical" href="https://github.com/wangtao95821/2019/11/06/iOS/约束警告⚠️ 断点/">
 
 
 
 
 
-  <title>NSObject 对象 占用内存 延伸 | Destiny's Child</title>
+  <title> | Destiny's Child</title>
   
 
 
@@ -254,7 +254,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/wangtao95821/2019/08/12/iOS/NSObject 对象 占用内存 延伸/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/wangtao95821/2019/11/06/iOS/约束警告⚠️ 断点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="长乐安">
@@ -271,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">NSObject 对象 占用内存 延伸</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -283,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T18:32:12+08:00">
-                2019-08-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-06T15:32:46+08:00">
+                2019-11-06
               </time>
             
 
@@ -321,23 +321,12 @@
       
 
       
-        <h3 id="NSObject-对象-占用内存-延伸"><a href="#NSObject-对象-占用内存-延伸" class="headerlink" title="NSObject 对象 占用内存 延伸"></a>NSObject 对象 占用内存 延伸</h3><ul>
-<li><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSObject</span> *objc = [[<span class="built_in">NSObject</span> alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"objc ---  %zd"</span>, malloc_size((__bridge <span class="keyword">const</span> <span class="keyword">void</span> *)objc));</span><br><span class="line"><span class="comment">// 使用 malloc_size  来查看分配的内存， 准确的</span></span><br><span class="line"><span class="comment">// (__bridge const void *) 转为C  的桥接</span></span><br><span class="line"><span class="comment">// 输出结果 ： 16    </span></span><br><span class="line"><span class="comment">// 一个NSObject 对象占用的内存 是 16个字节</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"person ---  %zd"</span>, class_getInstanceSize([Person <span class="keyword">class</span>]));</span><br><span class="line"><span class="comment">// 使用 class_getInstanceSize 返回的是实际占用的内存，和系统分配的不一样， 这里需要遵循 内存对齐原则</span></span><br></pre></td></tr></table></figure>
+        <h3 id="约束警告⚠️-断点"><a href="#约束警告⚠️-断点" class="headerlink" title="约束警告⚠️ 断点"></a>约束警告⚠️ 断点</h3><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">po [[UIWindow keyWindow] _autolayoutTrace]</span><br></pre></td></tr></table></figure>
 </li>
-<li><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc ViewController.m -o ViewController-arm64.cpp  <span class="comment">// 使用 终端编译成C++ 查找到NSObject_IMPL</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对于iOS  内存占用不满16字节的 强制赋值为16 字节(源码里有写)</p>
-</li>
-<li><p>NSObject 本质 </p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class isa;  <span class="comment">// 是一个只含有 calss 的 结构体， 实际上 这个isa占用了 8个字节  一个指针变量在64位的机器上大小是8个字节</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>还有一个内存对齐原则</p>
-<blockquote>
-<p>结构体的大小必须是最大成员大小的倍数</p>
-</blockquote>
+<li><p><a href="https://www.jianshu.com/p/1071c9b97650" target="_blank" rel="noopener">自动布局给的警告</a></p>
 </li>
 </ul>
-<h5 id="例子-简写-在arm64-环境下"><a href="#例子-简写-在arm64-环境下" class="headerlink" title="例子  简写  在arm64 环境下"></a>例子  简写  在arm64 环境下</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Person</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">@public</span>  <span class="comment">//  16</span></span><br><span class="line">    <span class="built_in">NSInteger</span> _age;  <span class="comment">// 8</span></span><br><span class="line">    <span class="built_in">NSInteger</span> _height;</span><br><span class="line">    <span class="built_in">NSInteger</span> _sex;</span><br><span class="line">    <span class="built_in">NSInteger</span> _sex1;</span><br><span class="line">    <span class="built_in">NSInteger</span> _sex2;</span><br><span class="line">    <span class="built_in">NSInteger</span> _sex3;</span><br><span class="line">    <span class="keyword">int</span> _sex4;  <span class="comment">// 4</span></span><br><span class="line">    <span class="keyword">int</span> _sex5;</span><br><span class="line">    <span class="keyword">int</span> _sex6;</span><br><span class="line">    <span class="keyword">int</span> _sex7;</span><br><span class="line">    <span class="keyword">int</span> _sex8;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对于实际占用的内存是 因为NSObject 里面class isa占用的内存是8个字节</span></span><br><span class="line"><span class="comment">// 所以 8 + 8*6(NSInteger) + 4 * 5(int) = 76 但是遵循内存对齐原则 所以最后实际返回的内存 是 80</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// NSInteger 占用 8个字节， int占用 4个字节</span></span><br><span class="line"><span class="comment">// 由于Person继承与NSObject ， 所以实际上 Person的结构体里面含有class isa 这个成员变量</span></span><br><span class="line"><span class="comment">// 由于NSObject实际上返回占用的内存是 16个字节， 在Person结构体里面最大的， 后面都是以16字节的大小来增加内存(Apple系统中的malloc函数分配内存空间时，内存是根据一个bucket的大小来分配的. bucket的大小是16，32，48，64，80 ...，可以看出系统是按16的倍数来分配对象的内存大小的), 但是由于NSObject实际占用8个字节 所有还余下8个字节 可以使用</span></span><br><span class="line"><span class="comment">//  计算方式仅限于计算占用的内存， 实际不是这样操作的 ： 6个NSInteger 占用了 3*16=48 个字节， 5个int ， 去掉两个正好填补NSObject余下的8个字节， 剩下的三个int 占用 16个字节(实际占用12个，但是以16字节增加的)</span></span><br><span class="line"><span class="comment">// 所以最终 Person占用的内存 是  48 + 16 + 16 = 80 个字节</span></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Student</span> : <span class="title">Person</span></span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">@public</span>  <span class="comment">//</span></span><br><span class="line">    <span class="keyword">int</span> _no;</span><br><span class="line">    <span class="keyword">int</span> _width;</span><br><span class="line">    <span class="keyword">int</span> _hei;</span><br><span class="line">    <span class="keyword">int</span> _hei1;</span><br><span class="line">    <span class="keyword">int</span> _hei2;</span><br><span class="line">    <span class="keyword">int</span> _hei3;</span><br><span class="line">    <span class="keyword">int</span> _hei31;</span><br><span class="line">    <span class="keyword">int</span> _hei32;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这里同理计算， 计算方式 为了方便算， 实际不是啊</span></span><br><span class="line"><span class="comment">// 占用了 112个字节</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -362,8 +351,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/23/iOS/iOS集成OpenCV.framework (c++)/" rel="next" title="iOS集成OpenCV.framework (c++) 注意事项">
-                <i class="fa fa-chevron-left"></i> iOS集成OpenCV.framework (c++) 注意事项
+              <a href="/2019/08/12/iOS/NSObject 对象 占用内存 延伸/" rel="next" title="NSObject 对象 占用内存 延伸">
+                <i class="fa fa-chevron-left"></i> NSObject 对象 占用内存 延伸
               </a>
             
           </div>
@@ -371,10 +360,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/06/iOS/约束警告⚠️ 断点/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -523,7 +508,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#NSObject-对象-占用内存-延伸"><span class="nav-number">1.</span> <span class="nav-text">NSObject 对象 占用内存 延伸</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例子-简写-在arm64-环境下"><span class="nav-number">1.0.1.</span> <span class="nav-text">例子  简写  在arm64 环境下</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#约束警告⚠️-断点"><span class="nav-number">1.</span> <span class="nav-text">约束警告⚠️ 断点</span></a></li></ol></div>
             
 
           </div>
